@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Guess number</title>
+	<style type="text/css">
+
+		.box{
+
+			width: 200px;
+			height: 400px;
+			text-align: center;
+			border: 1px solid grey;
+			margin: 50px auto;
+		}
+		#text{
+			width: 100px;
+			height:50px;
+			text-align: center;
+		}
+		#bt{
+			width: 120px;
+			height: 40px;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box"> 
+		<h2>Game of number guessing</h2>
+
+		<h3>A number has been generated from 1-100, guess to win</h3>
+
+		<input type="text"  placeholder="number guess" id="text"> <br>
+		<br>
+		<br>
+		<input type="button" name="confirm" value="confirm" id="bt">
+		<p id="info">....</p>
+
+		<script type="text/javascript">
+
+			
+
+			var	oText = document.getElementById('text');
+			var	oBt = document.getElementById('bt');
+			var oInfo = document.getElementById('info');
+
+			var random = parseInt(Math.random()*100 + 1);
+
+
+			oBt.onclick = function(){
+				// alert("1");
+				if (oText.value =="") {
+					alert("please guess a number");
+				} else {
+					//获取输入内容
+					var num = Number(oText.value);
+
+					if(num>random) {
+						oInfo.innerHTML = "bigger";
+						
+					} else if (num<random) {
+						oInfo.innerHTML = "smaller";
+					} else {
+						oInfo.innerHTML = "congratulations";
+					}
+				}
+
+			}
+
+	
+
+		</script>
+
+	</div>
+</body>
+</html>
